@@ -1,34 +1,56 @@
-const zTetromino = "secondShape"
-const oTetromino = "thirdShape"
-const iTetromino = "fourthShape"
-const tTetromino = "fifthShape"
+document.addEventListener("DOMContentLoaded", () => {
+  const grid = document.querySelector(".grid")
+  let squares = Array.from(document.querySelectorAll(".grid div"))
+  const scoreDisplay = document.querySelector("#score")
+  const startBtn = document.querySelector("#start-button")
+  const width = 10
+  let nextRandom = 0
+  let timerId
+  let score = 0
+  const colors = ["orange", "red", "purple", "green", "blue"]
 
+  //The Tetrominoes
+  const lTetromino = [
+    [1, width + 1, width * 2 + 1, 2],
+    [width, width + 1, width + 2, width * 2 + 2],
+    [1, width + 1, width * 2 + 1, width * 2],
+    [width, width * 2, width * 2 + 1, width * 2 + 2],
+  ]
 
-const tetrominoes =[lTetromino,zTetromino,oTetromino,tTetromino]
+  const zTetromino = [
+    [0, width, width + 1, width * 2 + 1],
+    [width + 1, width + 2, width * 2, width * 2 + 1],
+    [0, width, width + 1, width * 2 + 1],
+    [width + 1, width + 2, width * 2, width * 2 + 1],
+  ]
 
-console.log(tetrominoes[5])
+  const tTetromino = [
+    [1, width, width + 1, width + 2],
+    [1, width + 1, width + 2, width * 2 + 1],
+    [width, width + 1, width + 2, width * 2 + 1],
+    [1, width, width + 1, width * 2 + 1],
+  ]
 
-document.addEventListener('DOMContentLoaded',(()=>{
-const grid = document.querySelector('.grid')
-let squares = Array.from(document.querySelectorAll(".grid div"))
-let ScoreDisplay =document.querySelector("#score")
-let StartBtn = document.querySelector("#start-button")
-const width =10
-console.log(squares)
+  const oTetromino = [
+    [0, 1, width, width + 1],
+    [0, 1, width, width + 1],
+    [0, 1, width, width + 1],
+    [0, 1, width, width + 1],
+  ]
 
-}))
+  const iTetromino = [
+    [1, width + 1, width * 2 + 1, width * 3 + 1],
+    [width, width + 1, width + 2, width + 3],
+    [1, width + 1, width * 2 + 1, width * 3 + 1],
+    [width, width + 1, width + 2, width + 3],
+  ]
 
+  const theTetrominoes = [
+    lTetromino,
+    zTetromino,
+    tTetromino,
+    oTetromino,
+    iTetromino,
+  ]
 
-
-const lTetromino = [
-  [1, width + 1, width * 2 + 1, 2],
-  [width, width + 1, width + 2, width * 2 + 2],
-  [width, width * 2, width * 2 + 1, width * 2 + 2],
-]
-
-
-
-
-
-
-
+})
